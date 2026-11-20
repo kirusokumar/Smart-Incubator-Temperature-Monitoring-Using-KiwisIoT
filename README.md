@@ -1,12 +1,14 @@
-# Smart Warehouse Temperature Monitoring Using KiwisIoT
+# Smart Incubator Temperature Monitoring Using KiwisIoT
 
-A simple IoT-based warehouse temperature monitoring system using **NodeMCU ESP8266** and **DS18B20** to monitor temperature in real time and visualize readings through the KiwisIoT cloud dashboard.
+A simple IoT-based incubator temperature monitoring system using **NodeMCU ESP8266** and **DS18B20 temperature sensor** to monitor incubator temperature in real time and visualize the readings through the KiwisIoT cloud dashboard.
 
 ## About the Project
 
-Warehouse temperature monitoring is important for protecting stored products from unwanted temperature variations. This project uses a DS18B20 temperature sensor connected to a NodeMCU ESP8266 to monitor the warehouse environment.
+Maintaining a stable temperature inside an incubator is important for successful incubation. This project uses a DS18B20 temperature sensor connected to a NodeMCU ESP8266 to monitor incubator temperature.
 
-The ESP8266 collects temperature readings, checks the configured temperature limit, and sends the data to KiwisIoT through Wi-Fi. The dashboard helps users view temperature readings and monitoring status remotely.
+The ESP8266 collects temperature readings, compares them with a configured temperature range, and sends the data to KiwisIoT through Wi-Fi.
+
+The dashboard helps users monitor incubator temperature remotely and identify temperature deviations.
 
 ## Hardware Components
 
@@ -26,13 +28,22 @@ The ESP8266 collects temperature readings, checks the configured temperature lim
 
 A 4.7kΩ pull-up resistor is connected between DATA and 3.3V.
 
+## Features
+
+- Real-time incubator temperature monitoring
+- DS18B20 digital temperature sensing
+- Temperature range monitoring
+- Wi-Fi connectivity using ESP8266
+- Cloud dashboard visualization
+- Remote temperature monitoring
+
 ## KiwisIoT Dashboard
 
 The sensor data is transmitted to KiwisIoT using separate channels.
 
 | Channel | Data |
 |---|---|
-| Channel 0 | Warehouse Temperature (°C) |
+| Channel 0 | Incubator Temperature (°C) |
 | Channel 1 | Temperature Status |
 
 Temperature readings can be visualized using gauges, numeric widgets, charts, and labels.
@@ -47,19 +58,21 @@ Temperature readings can be visualized using gauges, numeric widgets, charts, an
 
 ## Working Principle
 
-The DS18B20 measures the warehouse temperature and sends the digital reading to the NodeMCU ESP8266. The controller evaluates the temperature against the configured threshold and determines the monitoring status.
+The DS18B20 sensor measures the temperature inside the incubator and sends the digital reading to the NodeMCU ESP8266.
 
-The ESP8266 sends the temperature and status information to KiwisIoT through Wi-Fi, allowing users to monitor warehouse conditions remotely.
+The controller compares the temperature with the configured limits and determines whether the temperature is normal, low, or high.
+
+The temperature and status information are transmitted to KiwisIoT through Wi-Fi, allowing users to monitor incubator conditions remotely.
 
 ## Project Tutorial
 
-You can explore the complete project, circuit connections, and implementation details here:
+Explore the complete project, implementation, and details on Hackster.io:
 
-[Smart Warehouse Temperature Monitoring Using KiwisIoT – Hackster.io](https://www.hackster.io/kirusokumar/smart-warehouse-temperature-monitoring-using-kiwisiot-b09a90)
+[Smart Incubator Temperature Monitoring Using KiwisIoT](https://www.hackster.io/kirusokumar/smart-incubator-temperature-monitoring-using-kiwisiot-f01c81)
 
 ## Explore KiwisIoT
 
-I used **KiwisIoT** for cloud connectivity and real-time sensor visualization in this project.
+I used **KiwisIoT** for cloud connectivity and real-time temperature visualization in this project.
 
 🌐 **KiwisIoT Platform:** https://www.kiwisiot.in/
 
@@ -67,16 +80,12 @@ I used **KiwisIoT** for cloud connectivity and real-time sensor visualization in
 
 💡 **KiwisIoT Example Projects:** https://github.com/Kiwistron/KiwisIoT-Projects/tree/main
 
-These resources are useful for exploring the platform, understanding the Arduino library, and learning how to build more IoT projects.
+These resources are helpful for exploring the platform, understanding the Arduino library, and learning how to build more IoT projects.
 
 ## About the Author
 
 I'm an IoT enthusiast who enjoys building practical projects using microcontrollers, sensors, cloud platforms, and real-world automation ideas.
 
-I share my projects to document what I build, what I learn, and to make it easier for others who are exploring IoT to discover similar ideas.
+I share my projects to document what I build, what I learn, and to help others who are exploring IoT discover ideas, experiment with hardware, and develop their own projects.
 
-If you find this project interesting, feel free to explore it, adapt it to your own ideas, or share your feedback. If you're looking for an IoT platform to experiment with sensor dashboards and cloud connectivity, you can also check out KiwisIoT and its library.
-
----
-
-*Built with curiosity, sensors, and IoT.*
+If you find this project interesting, feel free to
